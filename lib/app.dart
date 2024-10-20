@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:store_app/features/login/views/login.dart';
+import 'package:store_app/features/onboarding/views/onboarding.dart';
 import 'package:store_app/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -6,11 +9,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: CustomAppTheme.lightTheme,
       darkTheme: CustomAppTheme.darkTheme,
+      home: const LoginView(),
     );
   }
 }

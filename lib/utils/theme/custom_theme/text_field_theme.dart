@@ -16,7 +16,7 @@ class CustomTextFormFieldTheme {
     floatingLabelStyle: const TextStyle().copyWith(color: AppColors.black.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: AppColors.grey),
+      borderSide: const BorderSide(width: 4, color: AppColors.grey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(AppSizes.inputFieldRadius),

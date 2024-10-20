@@ -4,6 +4,7 @@ import 'package:store_app/utils/theme/custom_theme/checkbox_theme.dart';
 import 'package:store_app/utils/theme/custom_theme/custom_chip_theme.dart';
 import 'package:store_app/utils/theme/custom_theme/elevated_button_theme.dart';
 import 'package:store_app/utils/theme/custom_theme/outlined_button_theme.dart';
+import 'package:store_app/utils/theme/custom_theme/text_field_theme.dart';
 import 'package:store_app/utils/theme/custom_theme/text_theme.dart';
 
 class CustomAppTheme{
@@ -20,6 +21,7 @@ class CustomAppTheme{
     bottomSheetTheme: BottomSheetTheme.lightBottomSheetTheme,
     checkboxTheme: CheckBoxTheme.lightCheckboxTheme,
     chipTheme: CustomChipTheme.lightChipTheme,
+    inputDecorationTheme: CustomTextFormFieldTheme.lightInputDecorationTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -33,5 +35,6 @@ class CustomAppTheme{
     bottomSheetTheme: BottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: CheckBoxTheme.lightCheckboxTheme,
     chipTheme: CustomChipTheme.lightChipTheme,
+    inputDecorationTheme: CustomTextFormFieldTheme.darkInputDecorationTheme,
   );
 }
