@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:store_app/features/signup/views/verify_email.dart';
 import 'package:store_app/features/signup/views/widgets/terms_and_condition.dart';
 import 'package:store_app/utils/constants/sizes.dart';
 import 'package:store_app/utils/constants/texts.dart';
@@ -78,14 +80,14 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: AppSizes.spaceBtwSections),
 
           /// Terms & Conditions
-          TermsAndConditions(),
+          const TermsAndConditions(),
 
           const SizedBox(height: AppSizes.spaceBtwSections),
           /// Signup Button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: (){},
+              onPressed: () => Get.to(()=>const VerifyEmailView()),
               child: const Text(AppTexts.createAccount),
             ),
           ),

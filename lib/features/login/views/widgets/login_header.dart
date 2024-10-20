@@ -19,7 +19,7 @@ class LoginHeader extends StatelessWidget {
         Image(
           height: 150,
           image: AssetImage(
-            isDark ? AppImages.darkAppLogo : AppImages.lightAppLogo,
+            isDark ? AppImages.lightAppLogo : AppImages.darkAppLogo,
           ),
         ),
         Text(AppTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,),
