@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:store_app/features/signup/views/signup.dart';
 
 class OnBoardingController extends GetxController
 {
@@ -36,5 +37,6 @@ class OnBoardingController extends GetxController
   {
      currentPageIndex.value = 2;
      pageController.jumpToPage(2);
+     Get.to(()=> const SignupView());
   }
 }
