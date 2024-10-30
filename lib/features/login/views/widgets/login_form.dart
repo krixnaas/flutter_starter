@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:store_app/features/password_config/views/forgot_password.dart';
 import 'package:store_app/features/signup/views/signup.dart';
+import 'package:store_app/navigation_menu.dart';
 import 'package:store_app/utils/constants/sizes.dart';
 import 'package:store_app/utils/constants/texts.dart';
 
@@ -59,7 +60,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwSections,),
 
             /// Sign In Button
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text(AppTexts.signIn)),),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(()=> const NavigationMenu()), child: const Text(AppTexts.signIn)),),
             const SizedBox(height: AppSizes.spaceBtwItems,),
             /// Create Account Button
             SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () => Get.to(()=> const SignupView()), child: const Text(AppTexts.createAccount)),),
