@@ -11,23 +11,33 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final isDark = HelperFunctions.isDarkMode(context);
+
     return Scaffold(
       bottomNavigationBar: Obx(
-            () => NavigationBar(
-          height: 80,
-          elevation: 0,
-          indicatorColor: isDark ? AppColors.white.withOpacity(0.1) : AppColors.black.withOpacity(0.1),
-          selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) => controller.selectedIndex.value = index,
-          backgroundColor: isDark ? AppColors.black : Colors.white,
-          destinations: const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-          ],
-        ),
+        () {
+          final isDark = HelperFunctions.isDarkMode(context);
+          final backgroundColor = isDark ? AppColors.black : AppColors.white;
+          final iconColor = isDark ? AppColors.white : AppColors.black;
+          return NavigationBar(
+            height: 80,
+            elevation: 0,
+            indicatorColor: isDark ? iconColor.withOpacity(0.1) : iconColor.withOpacity(0.1),
+            selectedIndex: controller.selectedIndex.value,
+            onDestinationSelected: (index) =>
+            controller.selectedIndex.value = index,
+            backgroundColor: backgroundColor,
+            destinations: [
+              NavigationDestination(
+                  icon: Icon(Iconsax.home, color: iconColor), label: 'Home'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.shop, color: iconColor), label: 'Store'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.heart, color: iconColor), label: 'Wishlist'),
+              NavigationDestination(
+                  icon: Icon(Iconsax.user, color: iconColor), label: 'Profile'),
+            ],
+          );
+        },
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
@@ -42,4 +52,4 @@ class NavigationController extends GetxController {
     Container(color: Colors.orange),
     Container(color: Colors.blue),
   ];
-  }
+}

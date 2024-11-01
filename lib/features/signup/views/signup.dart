@@ -6,14 +6,19 @@ import 'package:store_app/features/signup/views/widgets/signup_form.dart';
 import 'package:store_app/features/signup/views/widgets/signup_header.dart';
 import 'package:store_app/utils/constants/sizes.dart';
 import 'package:store_app/utils/constants/texts.dart';
+import 'package:store_app/utils/helpers/helper_functions.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = HelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: isDark ? Colors.white : Colors.black),
+      ),
       body: SingleChildScrollView(
         child: Padding(
             padding: AppSpacingStyle.paddingWithAppBarHeight,
